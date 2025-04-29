@@ -53,7 +53,7 @@ export default function Home() {
           disabled={fade}
           className="px-8 py-3 bg-white bg-opacity-30 text-[#ff9a9e] rounded-2xl text-lg hover:scale-105 transform transition disabled:opacity-50 drop-shadow"
         >
-          Намайг зөөлхөн хуруугаараа дараач
+          Солих
         </button>
       </main>
 
