@@ -9,8 +9,17 @@ export default function Home() {
     "Амьдралд хэцүү үе цөөндөө ч, битгий бууж өгөөрэй! 😊",
     "Чиний минь халуун дулаан үгс бусдад урам зориг өгдөг шүү! 😊",
     "Чамтай учирсан нь энэ орчлон ертөнцийн хамгийн том бэлэг билээ! 😊",
-    "Эрүүл мэнддээ үргэлж анхаарж байгаарай учир нь хүний амьдралд эрүүл мэндээс чухал зүйл байхгүй шүү! 😊",
-    "Зза тйим байна даа! 😊 Өдөрийг сайхан өнгүүрээрэй.",
+    "Эрүүл мэнддээ үргэлж анхаарч байгаарай, учир нь хүний амьдралд эрүүл мэндээс чухал зүйл байхгүй шүү! 😊",
+    "За тийм байна даа! 😊 Өдрийг сайхан өнгөрүүлээрэй.",
+  ];
+
+  // List of images (replace with your actual image paths or URLs)
+  const images = [
+    "/image1.png",
+    "/image2.png",
+    "/image3.png",
+    "/image4.png",
+    "/image5.png",
   ];
 
   // State for current compliment and fade animation
@@ -33,6 +42,20 @@ export default function Home() {
         <title>Захиа</title>
         <meta name="description" content="A random compliment just for you" />
       </Head>
+
+      {/* Top-right image, responsive */}
+      <div className="fixed top-4 right-4 z-10">
+        <img
+          src={images[index % images.length]}
+          alt={`image${index + 1}`}
+          className="object-cover rounded-xl shadow-lg border-4 border-white bg-white/60"
+          style={{
+            width: "min(200px, 30vw)",
+            height: "auto",
+            maxWidth: "100%",
+          }}
+        />
+      </div>
 
       {/* Animated background */}
       <div className="animated-bg fixed inset-0 -z-10" />
@@ -81,6 +104,14 @@ export default function Home() {
           }
           100% {
             background-position: 0% 50%;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .fixed.top-4.right-4.z-10 img {
+            width: 80px !important;
+            height: auto !important;
+            max-width: 100% !important;
           }
         }
       `}</style>
